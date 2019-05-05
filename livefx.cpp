@@ -495,7 +495,7 @@ main(int ArgCount, char **Args) {
 
         u64 EndCounter = SDL_GetPerformanceCounter();
         Time += (f32)(EndCounter - PerformanceCounter) / PerformanceFrequency;
-        PerformanceCounter = SDL_GetPerformanceCounter();
+        PerformanceCounter = EndCounter;
     }
     return 0;
 }
