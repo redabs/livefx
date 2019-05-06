@@ -425,8 +425,6 @@ main(int ArgCount, char **Args) {
         glBindBuffer(GL_ARRAY_BUFFER, 0);
     }
 
-    auto TimeUniformLoc = glGetUniformLocation(ShaderProgram, "Time");
-    auto ResolutionUniformLoc = glGetUniformLocation(ShaderProgram, "Resolution"); 
     b32 ShaderProgramWorking = true;
 
     f32 Time = 0;
@@ -474,8 +472,10 @@ main(int ArgCount, char **Args) {
         
         if(ShaderProgramWorking) {
             glUseProgram(ShaderProgram);
-            glUniform2f(ResolutionUniformLoc, (f32)WindowWidth, (f32)WindowHeight);
-            glUniform1f(TimeUniformLoc, Time);
+
+            glUniform2f(glGetUniformLocation(ShaderProgram, "Resolution"), (f32)WindowWidth, (f32)WindowHeight);
+            glUniform1f(glGetUniformLocation(ShaderProgram, "Time"), Time);
+
             glBindBuffer(GL_ARRAY_BUFFER, VBO);
             
             GLint PosAttribLoc = glGetAttribLocation(ShaderProgram, "Pos");
