@@ -6,7 +6,7 @@ Hot loading OpenGL shader toy
 ## Inputs to the fragment shader
 * `vec2 FragPosition` Pixel coordinate of the fragment
 * `vec2 Resolution` Width and height of the client window in pixels
-* `float Time` Floating point seconds elapsed since the start of the program
+* `float Time` Seconds elapsed since the start of the program
  
  
 ## Sample program
