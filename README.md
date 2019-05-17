@@ -26,3 +26,7 @@ void main() {
 ## Dependencies
 * SDL2
 * OpenGL
+
+## TODO
+* Win32 support
+* Better probing of newest GLSL version available on system
